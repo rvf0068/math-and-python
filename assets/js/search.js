@@ -12,7 +12,7 @@ class BlogSearch {
   async init() {
     // Load search index
     try {
-      const response = await fetch('/my-jekyll/search.json');
+      const response = await fetch('/math-and-python/search.json');
       this.posts = await response.json();
       this.buildSearchIndex();
       this.setupSearchUI();
