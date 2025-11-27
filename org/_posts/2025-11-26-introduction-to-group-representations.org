@@ -1,0 +1,16 @@
+#+TITLE: Introduction to Group Representations
+#+DATE: 2025-11-26 18:43
+#+AUTHOR: rvf0068
+#+JEKYLL_LAYOUT: post
+#+JEKYLL_CATEGORIES: group-representations
+#+JEKYLL_TAGS: groups representations
+#+HAS_MATH: yes
+#+BIBLIOGRAPHY: ../../bibliography.bib
+
+* Introduction
+
+This starts a series on the representation theory of groups. More specifically, we only deal with the /classical/ (characteristic zero) type of representations, and only mention finite groups. The goal is to understand the chapter by M. Wachs, /Poset Topology: Tools and Applications,/ from [cite:@MR2383123].
+
+* Bibliography
+
+#+print_bibliography: 
