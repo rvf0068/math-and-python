@@ -3,8 +3,8 @@
 # Use simple KEY=VALUE format for cross-tool compatibility
 
 # Site Identity
-SITE_TITLE="My Org-Jekyll Blog"
-SITE_DESCRIPTION="A blog powered by Org-mode and Jekyll"
+SITE_TITLE="Math and Python"
+SITE_DESCRIPTION="A blog about exploring mathematics using Python"
 SITE_URL="https://rvf0068.github.io"
 SITE_BASEURL="/math-and-python"
 
