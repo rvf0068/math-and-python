@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="header-content">
+    <div class="site-brand">
+      <a href="{{site.url}}{{site.baseurl}}/" class="site-title">
+        <span class="site-icon">📚</span>
+        {{site.title}}
+      </a>
+      <p class="site-tagline">{{site.description}}</p>
+    </div>
+
+    <nav class="site-navigation">
+      <a href="{{site.url}}{{site.baseurl}}/" class="nav-link {% if page.url == '/' %}nav-active{% endif %}">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <a href="{{site.url}}{{site.baseurl}}/categories/" class="nav-link">
+        <span class="nav-icon">📂</span> Categories
+      </a>
+      <a href="{{site.url}}{{site.baseurl}}/tags/" class="nav-link">
+        <span class="nav-icon">🏷️</span> Tags
+      </a>
+      <a href="https://github.com/{{site.github_username}}" target="_blank" rel="noopener noreferrer" class="nav-link external-link">
+        <span class="nav-icon">🐙</span> GitHub
+      </a>
+    </nav>
+  </div>
+</header>

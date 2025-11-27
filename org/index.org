@@ -1,0 +1,64 @@
+#+BEGIN_EXPORT html
+---
+layout: default
+title: "Home"
+---
+#+END_EXPORT
+
+Welcome! This is the homepage of my blog, powered by Org-mode and Jekyll.
+
+#+BEGIN_EXPORT html
+<p class="home-about-link">
+  <a href="{{ site.baseurl }}/about/">About this blog</a>
+</p>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<h2>All Posts</h2>
+<ul>
+{% for post in site.posts %}
+  <li>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    <span class="post-date"> - {{ post.date | date: "%B %d, %Y" }}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<h2>Categories</h2>
+{% assign sorted_categories = site.categories | sort %}
+<ul>
+{% for category in sorted_categories %}
+  <li>
+    <strong>{{ category[0] }}</strong> ({{ category[1].size }} post{% if category[1].size != 1 %}s{% endif %})
+    <ul>
+    {% assign category_posts = category[1] | sort: 'date' | reverse %}
+    {% for post in category_posts %}
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <span class="post-date"> - {{ post.date | date: "%B %d, %Y" }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+
+<h2>Tags</h2>
+{% assign sorted_tags = site.tags | sort %}
+<ul>
+{% for tag in sorted_tags %}
+  <li>
+    <strong>{{ tag[0] }}</strong> ({{ tag[1].size }} post{% if tag[1].size != 1 %}s{% endif %})
+    <ul>
+    {% assign tag_posts = tag[1] | sort: 'date' | reverse %}
+    {% for post in tag_posts %}
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <span class="post-date"> - {{ post.date | date: "%B %d, %Y" }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+#+END_EXPORT

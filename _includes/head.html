@@ -1,0 +1,83 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Immediate dark mode application to prevent flash -->
+  <script>
+    // Apply saved dark mode preference immediately
+    (function() {
+      const savedMode = localStorage.getItem('blog-dark-mode');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldUseDark = savedMode === 'dark' || (savedMode === null && systemPrefersDark);
+
+      if (shouldUseDark) {
+        document.documentElement.classList.add('dark-mode');
+        document.documentElement.classList.remove('light-mode');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+
+  <!-- Plain Description -->
+  <title>
+    {{page.title | strip_newlines | strip_html | escape}} -- {{ site.title | strip_newlines |
+    strip_html | escape }}
+  </title>
+  <meta name="description" content="{{site.tagline}}" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>" />
+
+  <!-- Facebook -->
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="{% if page.fulltitle %}{{page.fulltitle | strip_newlines | strip_html | escape}}{% else %}{{page.title | strip_newlines | strip_html | escape}} | {{ site.title | strip_newlines | strip_html | escape }} {% endif %}"
+  />
+  <meta
+    property="og:description"
+    content="{{site.tagline | strip_newlines | strip_html | escape}}"
+  />
+  <meta property="og:url" content="{{site.url}}{{page.url}}" />
+  <meta property="og:site_name"
+    content="{{ site.title | strip_newlines | strip_html | escape }} "
+  />
+
+  <!-- CSS & fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css">
+  <link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/css/vendor/reset.css" />
+  <link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/css/app.css" />
+  
+  <!-- Prism.js for syntax highlighting -->
+  <!-- Note: SRI (Subresource Integrity) hashes should be added for production use -->
+  <!-- Example: integrity="sha384-..." crossorigin="anonymous" -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" crossorigin="anonymous" />
+
+
+  <!-- Our custom styles -->
+  <link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/css/code-blocks.css?v=6" />
+  <link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/css/math-blocks.css" />
+  <link rel="stylesheet" href="{{site.url}}{{site.baseurl}}/css/tables.css" />
+
+  <!-- CDN scripts are now injected directly by org_publish.el based on content analysis -->
+  <!-- This eliminates the need for Jekyll Liquid templating -->
+
+  <!-- Search functionality -->
+  <script src="{{site.url}}{{site.baseurl}}/assets/js/search.js" defer></script>
+
+  <!-- Dark mode toggle -->
+  <script src="{{site.url}}{{site.baseurl}}/assets/js/dark-mode.js" defer></script>
+
+  <!-- Prism.js core and plugins -->
+  <!-- Note: SRI (Subresource Integrity) hashes should be added for production use -->
+  <!-- Example: integrity="sha384-..." crossorigin="anonymous" -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" crossorigin="anonymous"></script>
+
+
+  <!-- Code block enhancements -->
+  <script src="{{site.url}}{{site.baseurl}}/assets/js/code-blocks.js?v=5"></script>
+  
+  <!-- Put your fonts here -->
+</head>

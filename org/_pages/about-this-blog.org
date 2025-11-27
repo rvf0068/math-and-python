@@ -1,0 +1,11 @@
+#+BEGIN_EXPORT html
+---
+layout: page
+title: "About this blog"
+permalink: /about/
+description: "About"
+---
+#+END_EXPORT
+
+I am a professor of mathematics in Mexico. 
+

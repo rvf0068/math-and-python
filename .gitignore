@@ -1,0 +1,27 @@
+_site/
+.bundle/
+vendor/
+Gemfile.lock
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+test-math-blocks.html
+*~
+/_posts/
+/assets/_posts/
+# Generated configuration file (source is .blog-config)
+/_config.yml
+# Generated content
+/categories/
+/tags/
+/index.html
+/pages/
+# Sample files and temporary content
+/script.sh
+/org/_posts/2025-10-30-generated-images.pdf
+*.tex
+/org/_posts/ltximg/
+/org/_posts/*.tikz
+screenshot-*.png
+# Exclude all PDF files
+*.pdf

@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<time itemprop="dateCreated datePublished"> {{page.date | date: "%e %b %Y"}}</time>
+<h1 itemprop="headline">
+  {{ page.title }}
+</h1>
+
+{{ content }}
+
+<!-- Post metadata at end -->
+<div class="post-meta-footer">
+  {% if page.categories and page.categories.size > 0 %}
+    <div class="post-categories">
+      <span class="meta-label">Categories:</span>
+      {% for category in page.categories %}
+        <a href="{{ site.baseurl }}/categories/{{ category | slugify }}/" class="category-link">{{ category }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if page.tags and page.tags.size > 0 %}
+    <div class="post-tags">
+      <span class="meta-label">Tags:</span>
+      {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="tag-link">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div><!-- Post navigation -->
+<nav class="post-navigation">
+  <div class="nav-links">
+    {% if page.previous %}
+      <div class="nav-previous">
+        <a href="{{ page.previous.url | relative_url }}" rel="prev">
+          <span class="nav-subtitle">← Previous</span>
+          <span class="nav-title">{{ page.previous.title }}</span>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if page.next %}
+      <div class="nav-next">
+        <a href="{{ page.next.url | relative_url }}" rel="next">
+          <span class="nav-subtitle">Next →</span>
+          <span class="nav-title">{{ page.next.title }}</span>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</nav>
+
+<!-- Comments Section -->
+{% if site.giscus.repo and page.comments != false %}
+  {% include giscus.html %}
+{% endif %}
+
+<!-- Prism.js for syntax highlighting (only on posts) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-BttltKXFyWnGZQcRWj6osIg7lbizJchuAMotOkdLxHxwt/Hyo+cl47bZU0QADg+Qt5DJwni3SbYGXeGMB5IoZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{site.url}}{{site.baseurl}}/assets/js/code-blocks.js"></script>
