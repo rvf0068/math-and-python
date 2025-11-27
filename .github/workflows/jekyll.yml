@@ -9,6 +9,11 @@ on:
     # Rebuild monthly to update dependencies
     - cron: '0 0 1 * *'
 
+# Allow only one deployment at a time, canceling any in-progress runs
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pages: write
@@ -87,6 +92,12 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     steps:
+      - name: Wait for any concurrent deployments
+        run: |
+          echo "⏳ Waiting 30 seconds to ensure we deploy after any concurrent workflows..."
+          sleep 30
+          echo "✅ Wait complete, proceeding with deployment"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
