@@ -5,7 +5,7 @@ title: "Home"
 ---
 #+END_EXPORT
 
-Welcome! This is the homepage of my blog, powered by Org-mode and Jekyll.
+Welcome! 
 
 #+BEGIN_EXPORT html
 <p class="home-about-link">
