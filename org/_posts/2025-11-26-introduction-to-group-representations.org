@@ -9,7 +9,7 @@
 
 * Introduction
 
-This starts a series on the representation theory of groups. More specifically, we only deal with the /classical/ (characteristic zero) type of representations, and only mention finite groups. The goal is to understand the chapter by M. Wachs, /Poset Topology: Tools and Applications,/ from [cite:@MR2383123].
+This starts a series on the representation theory of groups. More specifically, we only deal with the /classical/ (characteristic zero) type of representations, and only mention finite groups. Eventually we will concentrate on the representation theory of finite groups. The goal is to understand the chapter by M. Wachs, /Poset Topology: Tools and Applications,/ from [cite:@MR2383123].
 
 * Bibliography
 
