@@ -25,3 +25,4 @@ test-math-blocks.html
 screenshot-*.png
 # Exclude all PDF files
 *.pdf
+/auto/
